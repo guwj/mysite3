@@ -20,10 +20,23 @@ public class ListAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("ListAction 입장");
+		int page = WebUtil.checkIntParam(request.getParameter("p"), 1);
+
 		BoardDao dao = new BoardDao();
-		List<BoardVo> list = dao.getList(PAGE_SIZE, LIST_SIZE);
+
+		int totalCount = dao.getTotalCount();
+		int pageCount = (int) Math.ceil(totalCount / LIST_SIZE);
+		if (page > pageCount) {
+			page = 1;
+		}
+
+		List<BoardVo> list = dao.getList(page, LIST_SIZE);
 
 		request.setAttribute("list", list);
+
+		request.setAttribute("totalCount", totalCount);
+		request.setAttribute("currentPage", page);
+		request.setAttribute("listSize", LIST_SIZE);
 
 		WebUtil.forward(request, response, "/WEB-INF/views/board/list.jsp");
 	}
