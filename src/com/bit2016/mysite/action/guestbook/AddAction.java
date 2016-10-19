@@ -15,6 +15,7 @@ public class AddAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("AddAction 입장");
 		String name = request.getParameter( "name" );
 		String password = request.getParameter( "pass" );
 		String content = request.getParameter( "content" );

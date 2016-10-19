@@ -16,6 +16,7 @@ public class ModifyAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ModifyAction 입장");
 		// 인증 여부
 		HttpSession session = request.getSession();
 		if( session == null ) {
@@ -28,6 +29,8 @@ public class ModifyAction implements Action {
 			WebUtil.redirect(request, response, "/mysite3/main" );
 			return;
 		}
+		authUser.getNo();
+		
 		
 		String name = request.getParameter( "name" );
 		String password = request.getParameter( "password" );

@@ -10,6 +10,7 @@ import com.bit2016.mysite.vo.UserVo;
 
 public class UserDao {
 	private Connection getConnection() throws SQLException {
+		System.out.println("UserDao getConnection 입장");
 		Connection conn = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -23,6 +24,7 @@ public class UserDao {
 	
 	// 인증(로그인)
 	public UserVo get(String email, String password) {
+		System.out.println("UserDao get(email, password) 입장");
 		UserVo vo = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -73,6 +75,7 @@ public class UserDao {
 	
 	// 사용자 가져오기
 	public UserVo get(Long no) {
+		System.out.println("UserDao get(no) 입장");
 		UserVo vo = null;
 		
 		Connection conn = null;
@@ -119,6 +122,7 @@ public class UserDao {
 	}
 	
 	public void insert( UserVo vo ) {
+		System.out.println("UserDao insert 입장");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -154,6 +158,7 @@ public class UserDao {
 	}
 	
 	public void update( UserVo vo ) {
+		System.out.println("UserDao update 입장");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		

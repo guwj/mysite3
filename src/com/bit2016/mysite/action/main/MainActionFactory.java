@@ -7,6 +7,7 @@ public class MainActionFactory extends ActionFactory {
 
 	@Override
 	public Action getAction(String actionName) {
+		System.out.println("MainActionFactory 입장");
 		return new MainAction();
 	}
 

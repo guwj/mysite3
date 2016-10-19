@@ -8,6 +8,7 @@ public class GuestbookActionFactory extends ActionFactory {
 	@Override
 	public Action getAction(String actionName) {
 		
+		System.out.println("GuestbookActionFactory getAction 입장");
 		Action action = null;
 		
 		if( "add".equals( actionName ) ) {

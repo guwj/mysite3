@@ -8,26 +8,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bit2016.mysite.action.main.MainActionFactory;
+import com.bit2016.mysite.action.board.BoardActionFactory;
 import com.bit2016.web.Action;
 import com.bit2016.web.ActionFactory;
 
-@WebServlet("/main")
-public class MainServlet extends HttpServlet {
+@WebServlet("/board")
+public class BoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("BoardServlet doGet 입장");
+
 		request.setCharacterEncoding( "UTF-8" );
-		System.out.println("MainServlet doGet 입장");
 		String actionName = request.getParameter( "a" );
-		ActionFactory af = new MainActionFactory();
+		ActionFactory af = new BoardActionFactory();
 		Action action = af.getAction(actionName);
 
 		action.execute(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("MainServlet doPost 입장");
+		System.out.println("BoardServlet doPost 입장");
 		doGet(request, response);
 	}
 

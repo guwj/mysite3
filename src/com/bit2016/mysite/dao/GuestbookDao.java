@@ -14,6 +14,7 @@ import com.bit2016.mysite.vo.GuestbookVo;
 public class GuestbookDao {
 
 	private Connection getConnection() throws SQLException {
+		System.out.println("GuestbookDao getConnection 입장");
 		Connection conn = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -26,6 +27,7 @@ public class GuestbookDao {
 	}
 	
 	public void delete(GuestbookVo vo) {
+		System.out.println("GuestbookDao delete 입장");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -61,6 +63,7 @@ public class GuestbookDao {
 	}
 	
 	public void insert(GuestbookVo vo ) {
+		System.out.println("GuestbookDao insert 입장");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -96,6 +99,7 @@ public class GuestbookDao {
 	}
 	
 	public List<GuestbookVo> getList() {
+		System.out.println("GuestbookDao getList 입장");
 		List<GuestbookVo> list = new ArrayList<GuestbookVo>();
 
 		Connection conn = null;

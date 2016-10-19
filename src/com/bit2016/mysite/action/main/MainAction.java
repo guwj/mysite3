@@ -12,6 +12,7 @@ public class MainAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("MainAction 입장");
 		WebUtil.forward(
 			request, 
 			response, 

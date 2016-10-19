@@ -8,6 +8,7 @@ public class UserActionFactory extends ActionFactory {
 
 	@Override
 	public Action getAction(String actionName) {
+		System.out.println("UserActionFactory 입장");
 		Action action = null;
 		
 		if( "joinform".equals( actionName ) ) {

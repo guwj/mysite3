@@ -19,6 +19,7 @@ public class GuestbookServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding( "utf-8" );
 		
+		System.out.println("GuestbookServlet doGet 입장");
 		String actionName = request.getParameter( "a" );
 		
 		ActionFactory af = new GuestbookActionFactory();
@@ -27,6 +28,7 @@ public class GuestbookServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("UserServlet doPost 입장");
 		doGet(request, response);
 	}
 }

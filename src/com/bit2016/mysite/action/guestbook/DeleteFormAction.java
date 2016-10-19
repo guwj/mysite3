@@ -13,6 +13,7 @@ public class DeleteFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("DeleteFormAction 입장");
 		WebUtil.forward(
 			request,
 			response, 

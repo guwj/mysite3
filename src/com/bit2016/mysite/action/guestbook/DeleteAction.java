@@ -15,6 +15,7 @@ public class DeleteAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("DeleteAction 입장");
 		String no = request.getParameter( "no" );
 		String password = request.getParameter( "password" );
 		

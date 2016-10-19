@@ -19,6 +19,7 @@ public class UserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding( "UTF-8" );
 		
+		System.out.println("UserServlet doGet 입장");
 		String actionName = request.getParameter( "a" );
 		ActionFactory af = new UserActionFactory();
 		Action action = af.getAction(actionName);
@@ -27,6 +28,7 @@ public class UserServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("UserServlet doPost 입장");
 		doGet(request, response);
 	}
 

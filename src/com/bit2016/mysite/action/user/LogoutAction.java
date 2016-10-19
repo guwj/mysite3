@@ -15,6 +15,7 @@ public class LogoutAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("LogoutAction 입장");
 		HttpSession session = request.getSession();
 		if( session == null ) {
 			WebUtil.redirect(request, response, "/mysite3/main" );

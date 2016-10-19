@@ -1,4 +1,4 @@
-package com.bit2016.mysite.action.user;
+package com.bit2016.mysite.action.board;
 
 import java.io.IOException;
 
@@ -9,16 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.bit2016.web.Action;
 import com.bit2016.web.util.WebUtil;
 
-public class LoginFormAction implements Action {
+public class WriteFormAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("LoginFormAction 입장");
+		System.out.println("WriteFormAtion 입장");
 		WebUtil.forward(
 			request, 
-			response, 
-			"/WEB-INF/views/user/loginform.jsp");
-
+			response,
+			"/WEB-INF/views/board/write.jsp");
 	}
 
 }

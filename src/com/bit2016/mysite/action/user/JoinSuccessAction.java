@@ -13,6 +13,7 @@ public class JoinSuccessAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("joinSuccessAction 입장");
 		WebUtil.forward(
 			request, 
 			response, 
